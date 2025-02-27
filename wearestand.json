@@ -1,0 +1,1127 @@
+{
+    "log": {
+      "level": "warn",
+      "timestamp": true
+    },
+    "dns": {
+      "servers": [
+        {
+          "tag": "dns_proxy",
+          "address": "https://1.1.1.1/dns-query",
+          "address_resolver": "dns_direct",
+          "strategy": "prefer_ipv4",
+          "detour": "تظاهرات سراسری"
+        },
+        {
+          "tag": "dns_proxy_ipv4",
+          "address": "https://1.1.1.1/dns-query",
+          "address_resolver": "dns_direct",
+          "strategy": "ipv4_only",
+          "detour": "تظاهرات سراسری"
+        },
+        {
+          "tag": "dns_direct",
+          "address": "local",
+          "strategy": "prefer_ipv4",
+          "detour": "telegram Wearestand"
+        },
+        {
+          "tag": "dns_block",
+          "address": "rcode://success"
+        }
+      ],
+      "rules": [
+        {
+          "outbound": "any",
+          "server": "dns_direct"
+        }
+        
+        
+      ],
+      "final": "dns_proxy",
+      "independent_cache": true
+    },
+    "ntp": {
+      "enabled": true,
+      "server": "ir.pool.ntp.org",
+      "server_port": 123,
+      "detour": "direct"
+    },
+    "inbounds": [
+      {
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 20122,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "domain_strategy": "ipv4_only",
+      "tcp_fast_open": false,
+      "tcp_multi_path": false,
+      "udp_fragment": true
+    },
+    {
+      "type": "http",
+      "listen": "127.0.0.1",
+      "listen_port": 8181,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "domain_strategy": "ipv4_only",
+      "tcp_fast_open": false,
+      "tcp_multi_path": false,
+      "udp_fragment": true
+    },
+    {
+      "type": "socks",
+      "listen": "127.0.0.1",
+      "listen_port": 8080,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "domain_strategy": "ipv4_only",
+      "tcp_fast_open": false,
+      "tcp_multi_path": false,
+      "udp_fragment": true
+    },
+    {
+      "type": "tun",
+     "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": false,
+      "stack": "mixed",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 20122
+        }
+      },
+      "sniff": true,
+      "sniff_override_destination": true,
+      "domain_strategy": "ipv4_only"
+    }
+  
+    ],
+     "outbounds": [
+{
+        "type": "selector",
+        "tag": "منصوره سگوند مهسا موگویی",
+        "outbounds": [
+          "تظاهرات سراسری",
+          "تظاهرات سراسری"
+        
+        
+        ],
+        "default": "تظاهرات سراسری",
+        "interrupt_exist_connections": true
+      },
+
+   {
+        "type": "selector",
+        "tag": "نیکا شاکرمی مهسا امینی",
+        "outbounds": [
+          "تظاهرات سراسری",
+          "تظاهرات سراسری"
+        
+        
+        ],
+        "default": "تظاهرات سراسری",
+        "interrupt_exist_connections": true
+      },
+        {
+            "tag": "رضا شاه روحت شاد",
+            "type": "selector",
+            "outbounds": [
+                "تظاهرات سراسری",
+                "فریدون محمودی 🇹🇷",
+              
+                
+                 "مینو مجیدی 🇸🇪",
+                 "محمد امینی 🇦🇪",
+                 "آرین مریدی 🇩🇿",
+                 "کیان پیر فلک 🇦🇹",
+                 "محمدجواد زاهدی 🇦🇺",
+              
+                 "احمد شکراللهی 🇧🇬",
+                 "اسماعیل دزوار 🇧🇷",
+                 "امید مهدوی 🇨🇦",
+                 "سینا نادری 🇨🇭",
+                 "آرمین صیادی 🇨🇱",
+             
+                 "عزیز مرادی 🇨🇿",
+            
+                 "کمال فقهی 🇪🇪",
+                 "اسرا پناهی 🇪🇸",
+                 "آروین ململی 🇱🇺",
+            
+                 "آرنیکا قائم مقامی 🇬🇷",
+                 "محمد خواجوی 🇭🇰",
+                 "نگین عبدالملکی 🇭🇺",
+                 "دیانا محمودی 🇸🇬",
+              
+                 "دانیال شه بخش 🇯🇵",
+                 "سارینا شیری 🇱🇹",
+                 "خدانور لجه ای 🇳🇱"
+        
+
+
+            ]
+        },
+  
+{
+            "tag": "تظاهرات سراسری",
+            "type": "urltest",
+            "outbounds": [
+         
+                 "فریدون محمودی 🇹🇷",
+              
+                
+                 "مینو مجیدی 🇸🇪",
+                 "محمد امینی 🇦🇪",
+                 "آرین مریدی 🇩🇿",
+                 "کیان پیر فلک 🇦🇹",
+                 "محمدجواد زاهدی 🇦🇺",
+              
+                 "احمد شکراللهی 🇧🇬",
+                 "اسماعیل دزوار 🇧🇷",
+                 "امید مهدوی 🇨🇦",
+                 "سینا نادری 🇨🇭",
+                 "آرمین صیادی 🇨🇱",
+             
+                 "عزیز مرادی 🇨🇿",
+            
+                 "کمال فقهی 🇪🇪",
+                 "اسرا پناهی 🇪🇸",
+                 "آروین ململی 🇱🇺",
+            
+                 "آرنیکا قائم مقامی 🇬🇷",
+                 "محمد خواجوی 🇭🇰",
+                 "نگین عبدالملکی 🇭🇺",
+                 "دیانا محمودی 🇸🇬",
+              
+                 "دانیال شه بخش 🇯🇵",
+                 "سارینا شیری 🇱🇹",
+                 "خدانور لجه ای 🇳🇱"
+                
+              
+                
+      ],
+      "url": "http://cp.cloudflare.com",                
+      "interval": "10m0s"
+    
+    },
+   
+            
+    
+            {
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-tr.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "فریدون محمودی 🇹🇷",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+    
+                        {
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-fi.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "Finland 🇫🇮",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+            {
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-ro.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "Romania 🇷🇴",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-fr.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "France 🇫🇷",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-se.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "مینو مجیدی 🇸🇪",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-ae.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "محمد امینی 🇦🇪",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-al.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "آرین مریدی 🇩🇿",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-at.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "کیان پیر فلک 🇦🇹",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-au.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "محمدجواد زاهدی 🇦🇺",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-be.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "Belgium 🇧🇪",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-bg.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "احمد شکراللهی 🇧🇬",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-br.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "اسماعیل دزوار 🇧🇷",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-ca.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "امید مهدوی 🇨🇦",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-ch.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "سینا نادری 🇨🇭",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-cl.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "آرمین صیادی 🇨🇱",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-cr.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "Moldova 🇲🇩",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-cy.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "Cyprus 🇨🇾",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-cz.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "عزیز مرادی 🇨🇿",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-de.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "Germany 🇩🇪",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-dk.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "Denmark 🇩🇰",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-dy.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "United States 🇺🇸",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-ee.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "کمال فقهی 🇪🇪",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-es.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "اسرا پناهی 🇪🇸",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-vn.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "آروین ململی 🇱🇺",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-ua.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "Ukraine 🇺🇦",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-ge.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "Georgia 🇬🇪",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-gr.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "آرنیکا قائم مقامی 🇬🇷",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-hk.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "محمد خواجوی 🇭🇰",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-hu.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "نگین عبدالملکی 🇭🇺",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-in.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "دیانا محمودی 🇸🇬",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-is.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "United Kingdom 🇬🇧",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-it.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "Italy 🇮🇹",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-jp.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "دانیال شه بخش 🇯🇵",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-lt.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "سارینا شیری 🇱🇹",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+{
+            "headers": {
+                "Host": [
+                    "marilynmanson.link"
+                ]
+            },
+            "password": "3v8o0zma",
+            "path": "",
+            "server": "prox-nl.pointtoserver.com",
+            "server_port": 10799,
+            "domain_strategy": "",
+            "tag": "خدانور لجه ای 🇳🇱",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": false,
+
+                "server_name": "discord.gg"
+            },
+            "type": "http",
+            "username": "purevpn0s1444337"
+        },
+
+        {
+      "type": "direct",
+      "tag": "direct"
+    },
+
+    
+  ],
+    "route": {
+      "rules": [
+        {
+          "type": "logical",
+          "mode": "or",
+          "rules": [
+            {
+              "port": 53
+            },
+            {
+              "protocol": "dns"
+            }
+          ],
+          "outbound": "dns-out"
+        },
+        {
+          "type": "logical",
+          "mode": "or",
+          "rules": [
+            {
+              "port": 853
+            },
+            {
+              "network": "udp",
+              "port": 443
+            }
+          ],
+          "outbound": "block"
+        },
+        {
+          "ip_is_private": true,
+          "outbound": "direct"
+        },
+        
+        {
+          "protocol": "quic",
+          "outbound": "block"
+        }
+        
+    
+      ],
+      "rule_set": [
+        
+      ],
+      "final": "تظاهرات سراسری",
+      "auto_detect_interface": true,
+      "override_android_vpn": true
+    },
+    "experimental": {
+      "cache_file": {
+        "enabled": true,
+        "path": "cache.db",
+        "store_fakeip": true
+      },
+      "clash_api": {
+        "default_mode": "@Wearestand 👈🏻کانال تلگرام"
+      }
+    }
+  }
+  
