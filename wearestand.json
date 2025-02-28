@@ -23,7 +23,7 @@
           "tag": "dns_direct",
           "address": "local",
           "strategy": "prefer_ipv4",
-          "detour": "telegram Wearestand"
+          "detour": "تظاهرات سراسری"
         },
         {
           "tag": "dns_block",
@@ -1066,49 +1066,55 @@
     
   ],
     "route": {
-      "rules": [
-        {
-          "type": "logical",
-          "mode": "or",
-          "rules": [
-            {
-              "port": 53
-            },
-            {
-              "protocol": "dns"
-            }
-          ],
-          "outbound": "dns-out"
-        },
-        {
-          "type": "logical",
-          "mode": "or",
-          "rules": [
-            {
-              "port": 853
-            },
-            {
-              "network": "udp",
-              "port": 443
-            }
-          ],
-          "outbound": "block"
-        },
-        {
-          "ip_is_private": true,
-          "outbound": "direct"
-        },
-        
-        {
-          "protocol": "quic",
-          "outbound": "block"
-        }
-        
-    
-      ],
-      "rule_set": [
-        
-      ],
+     "rules": [
+      {
+        "inbound": "tun-in",
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "رضا شاه روحت شاد"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "network": "tcp",
+        "port": 853,
+        "action": "reject",
+        "method": "default"
+      },
+      {
+        "network": "udp",
+        "port": 443,
+        "action": "reject",
+        "method": "default"
+      },
+      
+      {
+        "inbound": "tun-in",
+        "action": "resolve"
+      },
+      
+      {
+        "ip_cidr": "10.10.34.0/24",
+        "outbound": "رضا شاه روحت شاد"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      
+   
+      
+    ],
       "final": "تظاهرات سراسری",
       "auto_detect_interface": true,
       "override_android_vpn": true
