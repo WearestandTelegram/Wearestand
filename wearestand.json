@@ -36,8 +36,8 @@
           "outbound": "any",
           "server": "dns_direct"
         }
-        
-        
+
+
       ],
       "final": "dns_proxy",
       "independent_cache": true
@@ -103,7 +103,7 @@
       "sniff_override_destination": true,
       "domain_strategy": "ipv4_only"
     }
-  
+
     ],
      "outbounds": [
 {
@@ -112,8 +112,8 @@
         "outbounds": [
           "اعتراضات سراسری",
           "اعتراضات سراسری"
-        
-        
+
+
         ],
         "default": "اعتراضات سراسری",
         "interrupt_exist_connections": true
@@ -125,8 +125,8 @@
         "outbounds": [
           "اعتراضات سراسری",
           "اعتراضات سراسری"
-        
-        
+
+
         ],
         "default": "اعتراضات سراسری",
         "interrupt_exist_connections": true
@@ -137,89 +137,89 @@
             "outbounds": [
                 "اعتراضات سراسری",
                 "فریدون محمودی 🇹🇷",
-              
-                
+
+
                  "مینو مجیدی 🇸🇪",
                  "محمد امینی 🇦🇪",
                  "آرین مریدی 🇩🇿",
                  "کیان پیر فلک 🇦🇹",
                  "محمدجواد زاهدی 🇦🇺",
-              
+
                  "احمد شکراللهی 🇧🇬",
                  "اسماعیل دزوار 🇧🇷",
                  "امید مهدوی 🇨🇦",
                  "سینا نادری 🇨🇭",
                  "آرمین صیادی 🇨🇱",
-             
+
                  "عزیز مرادی 🇨🇿",
-            
+
                  "کمال فقهی 🇪🇪",
                  "اسرا پناهی 🇪🇸",
                  "آروین ململی 🇱🇺",
-            
+
                  "آرنیکا قائم مقامی 🇬🇷",
                  "محمد خواجوی 🇭🇰",
                  "نگین عبدالملکی 🇭🇺",
                  "دیانا محمودی 🇸🇬",
-              
+
                  "دانیال شه بخش 🇯🇵",
                  "سارینا شیری 🇱🇹",
                  "خدانور لجه ای 🇳🇱"
-        
+
 
 
             ]
         },
-  
+
 {
             "tag": "اعتراضات سراسری",
             "type": "urltest",
             "outbounds": [
-         
+
                  "فریدون محمودی 🇹🇷",
-              
-                
+
+
                  "مینو مجیدی 🇸🇪",
                  "محمد امینی 🇦🇪",
                  "آرین مریدی 🇩🇿",
                  "کیان پیر فلک 🇦🇹",
                  "محمدجواد زاهدی 🇦🇺",
-              
+
                  "احمد شکراللهی 🇧🇬",
                  "اسماعیل دزوار 🇧🇷",
                  "امید مهدوی 🇨🇦",
                  "سینا نادری 🇨🇭",
                  "آرمین صیادی 🇨🇱",
-             
+
                  "عزیز مرادی 🇨🇿",
-            
+
                  "کمال فقهی 🇪🇪",
                  "اسرا پناهی 🇪🇸",
                  "آروین ململی 🇱🇺",
-            
+
                  "آرنیکا قائم مقامی 🇬🇷",
                  "محمد خواجوی 🇭🇰",
                  "نگین عبدالملکی 🇭🇺",
                  "دیانا محمودی 🇸🇬",
-              
+
                  "دانیال شه بخش 🇯🇵",
                  "سارینا شیری 🇱🇹",
                  "خدانور لجه ای 🇳🇱"
-                
-              
-                
+
+
+
       ],
-      "url": "http://cp.cloudflare.com",                
+      "url": "http://cp.cloudflare.com",
       "interval": "10m0s"
-    
+
     },
-   
-            
-    
+
+
+
             {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -240,11 +240,11 @@
             "type": "http",
             "username": "purevpn0s12934420"
         },
-    
+
                         {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -268,7 +268,7 @@
             {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -292,7 +292,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -316,7 +316,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -340,7 +340,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -364,7 +364,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -388,7 +388,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -412,7 +412,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -436,7 +436,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -460,7 +460,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -484,7 +484,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -508,7 +508,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -532,7 +532,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -556,7 +556,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -580,7 +580,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -604,7 +604,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -628,7 +628,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -652,7 +652,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -677,7 +677,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -701,7 +701,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -725,7 +725,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -749,7 +749,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -773,7 +773,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -797,7 +797,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -821,7 +821,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -845,7 +845,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -869,7 +869,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -893,7 +893,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -917,7 +917,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -941,7 +941,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -965,7 +965,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -989,7 +989,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -1013,7 +1013,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -1037,7 +1037,7 @@
 {
             "headers": {
                 "Host": [
-                    "marilynmanson.link"
+                    "stream.meet.google.com"
                 ]
             },
             "password": "54pj0u2e",
@@ -1064,7 +1064,7 @@
       "tag": "direct"
     },
 
-    
+
   ],
     "route": {
      "rules": [
@@ -1096,12 +1096,12 @@
         "action": "reject",
         "method": "default"
       },
-      
+
       {
         "inbound": "tun-in",
         "action": "resolve"
       },
-      
+
       {
         "ip_cidr": "10.10.34.0/24",
         "outbound": "رضا شاه روحت شاد"
@@ -1112,9 +1112,9 @@
       }
     ],
     "rule_set": [
-      
-   
-      
+
+
+
     ],
       "final": "اعتراضات سراسری",
       "auto_detect_interface": true,
@@ -1131,4 +1131,3 @@
       }
     }
   }
-  
