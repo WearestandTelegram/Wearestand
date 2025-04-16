@@ -1,55 +1,43 @@
 
 {
-    "log": {
-      "level": "warn",
-      "timestamp": true
-    },
-    "dns": {
-      "servers": [
+  "log": {
+    "level": "warn",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
         {
-          "tag": "dns_proxy",
-          "address": "https://1.1.1.1/dns-query",
-          "address_resolver": "dns_direct",
-          "strategy": "prefer_ipv4",
-          "detour": "اعتراضات سراسری"
-        },
-        {
-          "tag": "dns_proxy_ipv4",
-          "address": "https://1.1.1.1/dns-query",
-          "address_resolver": "dns_direct",
-          "strategy": "ipv4_only",
-          "detour": "اعتراضات سراسری"
-        },
-        {
-          "tag": "dns_direct",
-          "address": "local",
-          "strategy": "prefer_ipv4",
-          "detour": "اعتراضات سراسری"
-        },
-        {
-          "tag": "dns_block",
-          "address": "rcode://success"
-        }
-      ],
-      "rules": [
-        {
-          "outbound": "any",
-          "server": "dns_direct"
-        }
-
-
-      ],
-      "final": "dns_proxy",
-      "independent_cache": true
-    },
-    "ntp": {
-      "enabled": true,
-      "server": "ir.pool.ntp.org",
-      "server_port": 123,
-      "detour": "direct"
-    },
-    "inbounds": [
+        "tag": "default",
+        "address": "tls://8.8.8.8",
+        "detour": "رضا شاه روحت شاد"
+      },
       {
+        "tag": "local",
+        "address": "https://1.1.1.1/dns-query",
+        "detour": "تظاهرات سراسری"
+      }
+    
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "local"
+      },
+      {
+        "clash_mode": "Global",
+        "server": "default"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "local"
+      }
+    
+    ],
+    "final": "default",
+    "strategy": "ipv4_only"
+  },
+  "inbounds": [
+    {
       "type": "mixed",
       "listen": "127.0.0.1",
       "listen_port": 20122,
@@ -103,19 +91,18 @@
       "sniff_override_destination": true,
       "domain_strategy": "ipv4_only"
     }
-
-    ],
-     "outbounds": [
+  ],
+  "outbounds": [
 {
         "type": "selector",
         "tag": "منصوره سگوند مهسا موگویی",
         "outbounds": [
-          "اعتراضات سراسری",
-          "اعتراضات سراسری"
-
-
+          "تظاهرات سراسری",
+          "تظاهرات سراسری"
+        
+        
         ],
-        "default": "اعتراضات سراسری",
+        "default": "تظاهرات سراسری",
         "interrupt_exist_connections": true
       },
 
@@ -123,951 +110,623 @@
         "type": "selector",
         "tag": "نیکا شاکرمی مهسا امینی",
         "outbounds": [
-          "اعتراضات سراسری",
-          "اعتراضات سراسری"
-
-
+          "تظاهرات سراسری",
+          "تظاهرات سراسری"
+        
+        
         ],
-        "default": "اعتراضات سراسری",
+        "default": "تظاهرات سراسری",
         "interrupt_exist_connections": true
       },
-        {
+ {
             "tag": "رضا شاه روحت شاد",
             "type": "selector",
+            "interrupt_exist_connections": true,
+           
             "outbounds": [
-                "اعتراضات سراسری",
-                "فریدون محمودی 🇹🇷",
+                "تظاهرات سراسری",
+                "🇨🇦 T.ME/wearestand",
+                "🇨🇾 T.ME/iranramona",
+                "🇬🇪 T.ME/wearestand",
+                "🇧🇴 T.ME/iranramona",
+                "🇩🇪 T.ME/wearestand",
+                "🇮🇹 T.ME/wearestand",
+                "🇩🇰 T.ME/iranramona",
+                "🇱🇧 T.ME/iranramona",
+                "🇺🇸 T.ME/wearestand",
+                "🇫🇷 T.ME/iranramona",
+                "🇪🇪 T.ME/wearestand",
+                "🇦🇿 T.ME/iranramona",
+                "🇰🇾 T.ME/wearestand",
+                "🇹🇷 T.ME/iranramona"
+            ]
+        },
+
+        {
+            "tag": "تظاهرات سراسری",
+            "type": "urltest",
+            "url": "http://cp.cloudflare.com",
+            "interval": "10m0s",
+            "outbounds": [
+                "🇨🇦CANADA",
+                "🇨🇾CYPRUS",
+                "🇬🇪GEORGIA",
+                "🇧🇴BOLIVIA",
+                "🇩🇪GERMANY",
+                "🇮🇹ITALY",
+                "🇩🇰DENMARK",
+                "🇱🇧LEBANON",
+                "🇺🇸UNITED STATES",
+                "🇫🇷FRANCE",
+                "🇪🇪ESTONIA",
+                "🇦🇿AZERBAIJAN",
+                "🇰🇾CAYMAN ISLAND",
+                "🇹🇷TURKEY"
+                 
+  
+            ]
+        },
+
+{
+            "tag": "🇨🇦 T.ME/wearestand",
+            "type": "urltest",
+            "outbounds": [
+               "🇨🇦CANADA"
 
 
-                 "مینو مجیدی 🇸🇪",
-                 "محمد امینی 🇦🇪",
-                 "آرین مریدی 🇩🇿",
-                 "کیان پیر فلک 🇦🇹",
-                 "محمدجواد زاهدی 🇦🇺",
-
-                 "احمد شکراللهی 🇧🇬",
-                 "اسماعیل دزوار 🇧🇷",
-                 "امید مهدوی 🇨🇦",
-                 "سینا نادری 🇨🇭",
-                 "آرمین صیادی 🇨🇱",
-
-                 "عزیز مرادی 🇨🇿",
-
-                 "کمال فقهی 🇪🇪",
-                 "اسرا پناهی 🇪🇸",
-                 "آروین ململی 🇱🇺",
-
-                 "آرنیکا قائم مقامی 🇬🇷",
-                 "محمد خواجوی 🇭🇰",
-                 "نگین عبدالملکی 🇭🇺",
-                 "دیانا محمودی 🇸🇬",
-
-                 "دانیال شه بخش 🇯🇵",
-                 "سارینا شیری 🇱🇹",
-                 "خدانور لجه ای 🇳🇱"
-
+            ]
+        },
+{
+            "tag": "🇨🇾 T.ME/iranramona",
+            "type": "urltest",
+            "outbounds": [
+               "🇨🇾CYPRUS"
 
 
             ]
         },
 
 {
-            "tag": "اعتراضات سراسری",
+            "tag": "🇬🇪 T.ME/wearestand",
             "type": "urltest",
             "outbounds": [
-
-                 "فریدون محمودی 🇹🇷",
-
-
-                 "مینو مجیدی 🇸🇪",
-                 "محمد امینی 🇦🇪",
-                 "آرین مریدی 🇩🇿",
-                 "کیان پیر فلک 🇦🇹",
-                 "محمدجواد زاهدی 🇦🇺",
-
-                 "احمد شکراللهی 🇧🇬",
-                 "اسماعیل دزوار 🇧🇷",
-                 "امید مهدوی 🇨🇦",
-                 "سینا نادری 🇨🇭",
-                 "آرمین صیادی 🇨🇱",
-
-                 "عزیز مرادی 🇨🇿",
-
-                 "کمال فقهی 🇪🇪",
-                 "اسرا پناهی 🇪🇸",
-                 "آروین ململی 🇱🇺",
-
-                 "آرنیکا قائم مقامی 🇬🇷",
-                 "محمد خواجوی 🇭🇰",
-                 "نگین عبدالملکی 🇭🇺",
-                 "دیانا محمودی 🇸🇬",
-
-                 "دانیال شه بخش 🇯🇵",
-                 "سارینا شیری 🇱🇹",
-                 "خدانور لجه ای 🇳🇱"
+                "🇬🇪GEORGIA"
 
 
 
-      ],
-      "url": "http://cp.cloudflare.com",
-      "interval": "10m0s"
-
-    },
-
-
-
-            {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-tr.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "فریدون محمودی 🇹🇷",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-
-                        {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-fi.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "Finland 🇫🇮",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-            {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-ro.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "Romania 🇷🇴",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
+            ]
         },
 {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-fr.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "France 🇫🇷",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
+            "tag": "🇧🇴 T.ME/iranramona",
+            "type": "urltest",
+            "outbounds": [
+                "🇧🇴BOLIVIA"
 
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
+
+            ]
+        },
+
+
+{
+            "tag": "🇩🇪 T.ME/wearestand",
+            "type": "urltest",
+            "outbounds": [
+                "🇩🇪GERMANY",
+                "🇩🇪GERMANY2"
+
+
+            ]
+        },
+
+
+{
+            "tag": "🇮🇹 T.ME/wearestand",
+            "type": "urltest",
+            "outbounds": [
+                "🇮🇹ITALY"
+
+
+            ]
         },
 {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-se.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "مینو مجیدی 🇸🇪",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
+            "tag": "🇩🇰 T.ME/iranramona",
+            "type": "urltest",
+            "outbounds": [
+                "🇩🇰DENMARK"
 
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-ae.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "محمد امینی 🇦🇪",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
 
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-al.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "آرین مریدی 🇩🇿",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-at.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "کیان پیر فلک 🇦🇹",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-au.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "محمدجواد زاهدی 🇦🇺",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-be.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "Belgium 🇧🇪",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-bg.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "احمد شکراللهی 🇧🇬",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-br.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "اسماعیل دزوار 🇧🇷",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-ca.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "امید مهدوی 🇨🇦",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-ch.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "سینا نادری 🇨🇭",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-cl.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "آرمین صیادی 🇨🇱",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-cr.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "Moldova 🇲🇩",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-cy.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "Cyprus 🇨🇾",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-cz.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "عزیز مرادی 🇨🇿",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-de.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "Germany 🇩🇪",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
+            ]
         },
 
 {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-dk.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "Denmark 🇩🇰",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
+            "tag": "🇱🇧 T.ME/iranramona",
+            "type": "urltest",
+            "outbounds": [
+                "🇱🇧LEBANON"
 
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
+
+            ]
         },
 {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-dy.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "United States 🇺🇸",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
+            "tag": "🇺🇸 T.ME/wearestand",
+            "type": "urltest",
+            "outbounds": [
+                "🇺🇸UNITED STATES",
+                "🇺🇸UNITED STATES2"
 
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
+
+            ]
         },
 {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-ee.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "کمال فقهی 🇪🇪",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
+            "tag": "🇫🇷 T.ME/iranramona",
+            "type": "urltest",
+            "outbounds": [
+                "🇫🇷FRANCE"
 
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
+
+            ]
         },
 {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-es.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "اسرا پناهی 🇪🇸",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
+            "tag": "🇪🇪 T.ME/wearestand",
+            "type": "urltest",
+            "outbounds": [
+                "🇪🇪ESTONIA"
+                
 
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
+
+            ]
+        },
+
+
+   {
+            "tag": "🇦🇿 T.ME/iranramona",
+            "type": "urltest",
+            "outbounds": [
+                "🇦🇿AZERBAIJAN"
+
+
+            ]
+        },
+
+{
+            "tag": "🇰🇾 T.ME/wearestand",
+            "type": "urltest",
+            "outbounds": [
+                "🇰🇾CAYMAN ISLAND"
+                
+
+
+            ]
         },
 {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-vn.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "آروین ململی 🇱🇺",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
+            "tag": "🇹🇷 T.ME/iranramona",
+            "type": "urltest",
+            "outbounds": [
+                "🇹🇷TURKEY"
+                
 
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
+
+            ]
         },
-{
+        {
             "headers": {
                 "Host": [
                     "stream.meet.google.com"
                 ]
             },
-            "password": "vp7zyz6y",
+            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
             "path": "",
-            "server": "prox-ua.pointtoserver.com",
-            "server_port": 10799,
+            "server": "146.70.75.115",
+            "server_port": 89,
             "domain_strategy": "",
-            "tag": "Ukraine 🇺🇦",
+            "tag": "🇨🇦CANADA",
             "tls": {
                 "alpn": [
                     "h2,http/1.1"
                 ],
                 "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
+                "enabled": true,
+                "insecure": true,
+                "server_name": "stream.meet.google.com"
             },
             "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-ge.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "Georgia 🇬🇪",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-gr.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "آرنیکا قائم مقامی 🇬🇷",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-hk.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "محمد خواجوی 🇭🇰",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-hu.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "نگین عبدالملکی 🇭🇺",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-in.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "دیانا محمودی 🇸🇬",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-is.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "United Kingdom 🇬🇧",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-it.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "Italy 🇮🇹",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-jp.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "دانیال شه بخش 🇯🇵",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-lt.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "سارینا شیری 🇱🇹",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "vp7zyz6y",
-            "path": "",
-            "server": "prox-nl.pointtoserver.com",
-            "server_port": 10799,
-            "domain_strategy": "",
-            "tag": "خدانور لجه ای 🇳🇱",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": false,
-
-                "server_name": "discord.gg"
-            },
-            "type": "http",
-            "username": "purevpn0s10114301"
+            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
         },
 
         {
-      "type": "direct",
-      "tag": "direct"
+            "headers": {
+                "Host": [
+                    "stream.meet.google.com"
+                ]
+            },
+            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+            "path": "",
+            "server": "[193.19.204.129]",
+            "server_port": 89,
+            "domain_strategy": "",
+            "tag": "🇨🇾CYPRUS",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": true,
+                "insecure": true,
+                "server_name": "stream.meet.google.com"
+            },
+            "type": "http",
+            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+        },
+
+
+       
+        {
+            "headers": {
+                "Host": [
+                    "stream.meet.google.com"
+                ]
+            },
+            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+            "path": "",
+            "server": "81.17.123.114",
+            "server_port": 89,
+            "domain_strategy": "",
+            "tag": "🇬🇪GEORGIA",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": true,
+                "insecure": true,
+                "server_name": "stream.meet.google.com"
+            },
+            "type": "http",
+            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+        },
+        
+        {
+            "headers": {
+                "Host": [
+                    "stream.meet.google.com"
+                ]
+            },
+            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+            "path": "",
+            "server": "[::ffff:2d86:bd03]",
+            "server_port": 89,
+            "domain_strategy": "",
+            "tag": "🇧🇴BOLIVIA",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": true,
+                "insecure": true,
+                "server_name": "stream.meet.google.com"
+            },
+               "type": "http",
+            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+        },
+        
+        
+
+        
+        
+        
+       
+
+        {
+            "headers": {
+                "Host": [
+                    "stream.meet.google.com"
+                ]
+            },
+            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+            "path": "",
+            "server": "194.233.96.24",
+            "server_port": 90,
+            "domain_strategy": "",
+            "tag": "🇩🇪GERMANY",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": true,
+                "insecure": true,
+                "server_name": "stream.meet.google.com"
+            },
+            "type": "http",
+            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+        },
+        {
+            "headers": {
+                "Host": [
+                    "stream.meet.google.com"
+                ]
+            },
+            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+            "path": "",
+            "server": "91.214.64.21",
+            "server_port": 90,
+            "domain_strategy": "",
+            "tag": "🇩🇪GERMANY2",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": true,
+                "insecure": true,
+                "server_name": "stream.meet.google.com"
+            },
+            "type": "http",
+            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+        },
+
+        
+        
+        {
+            "headers": {
+                "Host": [
+                    "stream.meet.google.com"
+                ]
+            },
+            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+            "path": "",
+            "server": "85.190.232.156",
+            "server_port": 89,
+            "domain_strategy": "",
+            "tag": "🇮🇹ITALY",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": true,
+                "insecure": true,
+                "server_name": "stream.meet.google.com"
+            },
+            "type": "http",
+            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+        },
+        
+        {
+            "headers": {
+                "Host": [
+                    "stream.meet.google.com"
+                ]
+            },
+            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+            "path": "",
+            "server": "85.190.238.27",
+            "server_port": 89,
+            "domain_strategy": "",
+            "tag": "🇩🇰DENMARK",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": true,
+                "insecure": true,
+                "server_name": "stream.meet.google.com"
+            },
+            "type": "http",
+            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+        },
+
+
+
+
+        
+{
+            "headers": {
+                "Host": [
+                    "stream.meet.google.com"
+                ]
+            },
+            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+            "path": "",
+            "server": "[::ffff:d461:4603]",
+            "server_port": 89,
+            "domain_strategy": "",
+            "tag": "🇱🇧LEBANON",
+             "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": true,
+                "insecure": true,
+                "server_name": "stream.meet.google.com"
+            },
+            "type": "http",
+            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+        },
+{
+            "headers": {
+                "Host": [
+                    "stream.meet.google.com"
+                ]
+            },
+            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+            "path": "",
+            "server": "[::ffff:426f:3de9]",
+            "server_port": 89,
+            "domain_strategy": "",
+            "tag": "🇺🇸UNITED STATES",
+             "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": true,
+                "insecure": true,
+                "server_name": "stream.meet.google.com"
+            },
+            "type": "http",
+            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+        },
+
+
+{
+            "headers": {
+                "Host": [
+                    "stream.meet.google.com"
+                ]
+            },
+            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+            "path": "",
+            "server": "178.249.212.136",
+            "server_port": 89,
+            "domain_strategy": "",
+            "tag": "🇫🇷FRANCE",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": true,
+                "insecure": true,
+                "server_name": "stream.meet.google.com"
+            },
+            "type": "http",
+            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+        },
+    
+{
+            "headers": {
+                "Host": [
+                    "stream.meet.google.com"
+                ]
+            },
+            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+            "path": "",
+            "server": "85.190.239.114",
+            "server_port": 90,
+            "domain_strategy": "",
+            "tag": "🇪🇪ESTONIA",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": true,
+                "insecure": true,
+                "server_name": "stream.meet.google.com"
+            },
+            "type": "http",
+            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+        },
+
+{
+            "headers": {
+                "Host": [
+                    "stream.meet.google.com"
+                ]
+            },
+            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+            "path": "",
+            "server": "185.202.220.128",
+            "server_port": 89,
+            "domain_strategy": "",
+            "tag": "🇺🇸UNITED STATES2",
+            "tls": {
+                "alpn": [
+                    "h2,http/1.1"
+                ],
+                "disable_sni": false,
+                "enabled": true,
+                "insecure": true,
+                "server_name": "stream.meet.google.com"
+            },
+            "type": "http",
+            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+        },
+
+{
+      "headers": {
+        "Host": [
+          "arvancloud.ir"
+        ]
+      },
+      "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+      "path": "",
+      "server": "45.137.79.3",
+      "server_port": 90,
+      "domain_strategy": "",
+      "tag": "🇦🇿AZERBAIJAN",
+      "tls": {
+        "alpn": [
+          "h2,http/1.1"
+        ],
+        "disable_sni": false,
+        "enabled": true,
+        "insecure": true,
+        "server_name": "stream.meet.google.com"
+      },
+      "type": "http",
+      "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
     },
 
-
+{
+      "headers": {
+        "Host": [
+          "arvancloud.ir"
+        ]
+      },
+      "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+      "path": "",
+      "server": "95.214.112.3",
+      "server_port": 89,
+      "domain_strategy": "",
+      "tag": "🇰🇾CAYMAN ISLAND",
+      "tls": {
+        "alpn": [
+          "h2,http/1.1"
+        ],
+        "disable_sni": false,
+        "enabled": true,
+        "insecure": true,
+        "server_name": "stream.meet.google.com"
+      },
+      "type": "http",
+      "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+    },
+{
+      "headers": {
+        "Host": [
+          "arvancloud.ir"
+        ]
+      },
+      "password": "sT6b8zH8MuRtCm11ypt5rWPH",
+      "path": "",
+      "server": "45.136.155.130",
+      "server_port": 89,
+      "domain_strategy": "",
+      "tag": "🇹🇷TURKEY",
+      "tls": {
+        "alpn": [
+          "h2,http/1.1"
+        ],
+        "disable_sni": false,
+        "enabled": true,
+        "insecure": true,
+        "server_name": "stream.meet.google.com"
+      },
+      "type": "http",
+      "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+    },
+        {
+      "type": "direct",
+      "tag": "direct"
+    }
   ],
-    "route": {
-     "rules": [
+  "route": {
+    "rules": [
       {
         "inbound": "tun-in",
         "action": "sniff"
@@ -1096,12 +755,12 @@
         "action": "reject",
         "method": "default"
       },
-
+      
       {
         "inbound": "tun-in",
         "action": "resolve"
       },
-
+      
       {
         "ip_cidr": "10.10.34.0/24",
         "outbound": "رضا شاه روحت شاد"
@@ -1112,22 +771,14 @@
       }
     ],
     "rule_set": [
-
-
-
+      
     ],
-      "final": "اعتراضات سراسری",
-      "auto_detect_interface": true,
-      "override_android_vpn": true
-    },
-    "experimental": {
-      "cache_file": {
-        "enabled": true,
-        "path": "cache.db",
-        "store_fakeip": true
-      },
-      "clash_api": {
-        "default_mode": "@Wearestand 👈🏻کانال تلگرام"
-      }
+    "final": "رضا شاه روحت شاد",
+    "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
     }
   }
+}
