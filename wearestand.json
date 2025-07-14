@@ -1,43 +1,54 @@
-
 {
-  "log": {
-    "level": "warn",
-    "timestamp": true
-  },
-  "dns": {
-    "servers": [
+    "log": {
+      "level": "warn",
+      "timestamp": true
+    },
+    "dns": {
+      "servers": [
         {
-        "tag": "default",
-        "address": "tls://8.8.8.8",
-        "detour": "رضا شاه روحت شاد"
-      },
+          "tag": "dns_proxy",
+          "address": "tcp://8.8.8.8",
+          "address_resolver": "dns_direct",
+          "strategy": "prefer_ipv4",
+          "detour": "زن زندگی آزادی"
+        },
+        {
+          "tag": "dns_proxy_ipv4",
+          "address": "tcp://8.8.8.8",
+          "address_resolver": "dns_direct",
+          "strategy": "ipv4_only",
+          "detour": "زن زندگی آزادی"
+        },
+        {
+          "tag": "dns_direct",
+          "address": "local",
+          "strategy": "prefer_ipv4",
+          "detour": "زن زندگی آزادی"
+        },
+        {
+          "tag": "dns_block",
+          "address": "rcode://success"
+        }
+      ],
+      "rules": [
+        {
+          "outbound": "any",
+          "server": "dns_direct"
+        }
+        
+        
+      ],
+      "final": "dns_proxy",
+      "independent_cache": true
+    },
+    "ntp": {
+      "enabled": true,
+      "server": "ir.pool.ntp.org",
+      "server_port": 123,
+      "detour": "direct"
+    },
+    "inbounds": [
       {
-        "tag": "local",
-        "address": "https://1.1.1.1/dns-query",
-        "detour": "تظاهرات سراسری"
-      }
-    
-    ],
-    "rules": [
-      {
-        "outbound": "any",
-        "server": "local"
-      },
-      {
-        "clash_mode": "Global",
-        "server": "default"
-      },
-      {
-        "clash_mode": "Direct",
-        "server": "local"
-      }
-    
-    ],
-    "final": "default",
-    "strategy": "ipv4_only"
-  },
-  "inbounds": [
-    {
       "type": "mixed",
       "listen": "127.0.0.1",
       "listen_port": 20122,
@@ -91,7 +102,8 @@
       "sniff_override_destination": true,
       "domain_strategy": "ipv4_only"
     }
-  ],
+  
+    ],
   "outbounds": [
 {
         "type": "selector",
@@ -118,609 +130,603 @@
         "default": "تظاهرات سراسری",
         "interrupt_exist_connections": true
       },
- {
-            "tag": "رضا شاه روحت شاد",
+        
+        
+   {
+            "tag": "زن زندگی آزادی",
             "type": "selector",
-            "interrupt_exist_connections": true,
-           
             "outbounds": [
                 "تظاهرات سراسری",
-                "🇨🇦 T.ME/wearestand",
-                "🇨🇾 T.ME/iranramona",
-                "🇬🇪 T.ME/wearestand",
-                "🇧🇴 T.ME/iranramona",
-                "🇩🇪 T.ME/wearestand",
-                "🇮🇹 T.ME/wearestand",
-                "🇩🇰 T.ME/iranramona",
-                "🇱🇧 T.ME/iranramona",
-                "🇺🇸 T.ME/wearestand",
-                "🇫🇷 T.ME/iranramona",
-                "🇪🇪 T.ME/wearestand",
-                "🇦🇿 T.ME/iranramona",
-                "🇰🇾 T.ME/wearestand",
-                "🇹🇷 T.ME/iranramona"
+        "wearestand-Sweden",
+        "wearestand-Germany",
+        "wearestand-Swiss",
+        "wearestand-Slovakia",
+        "wearestand-Netherlands",
+        "wearestand-Netherlands",
+        "wearestand-Belgium",
+        "wearestand-Italy",
+        "wearestand-UK-Man",
+        "wearestand-Romania",
+        "wearestand-Moldova",
+        "wearestand-Canada",
+        "wearestand-Norway",
+        "wearestand-Miami",
+        "wearestand-LosAngeles",
+        "wearestand-UAE",
+        "wearestand-Singapore",
+        "wearestand-Phoenix",
+        "wearestand-Austria",
+        "wearestand-HongKong",
+        "wearestand-Turkey"
+            
+         
+
+
             ]
         },
-
-        {
+  
+{
             "tag": "تظاهرات سراسری",
             "type": "urltest",
-            "url": "http://cp.cloudflare.com",
-            "interval": "10m0s",
             "outbounds": [
-                "🇨🇦CANADA",
-                "🇨🇾CYPRUS",
-                "🇬🇪GEORGIA",
-                "🇧🇴BOLIVIA",
-                "🇩🇪GERMANY",
-                "🇮🇹ITALY",
-                "🇩🇰DENMARK",
-                "🇱🇧LEBANON",
-                "🇺🇸UNITED STATES",
-                "🇫🇷FRANCE",
-                "🇪🇪ESTONIA",
-                "🇦🇿AZERBAIJAN",
-                "🇰🇾CAYMAN ISLAND",
-                "🇹🇷TURKEY"
-                 
-  
-            ]
-        },
+         
+        "wearestand-Sweden",
+        "wearestand-Germany",
+        "wearestand-Swiss",
+        "wearestand-Slovakia",
+        "wearestand-Netherlands",
+        "wearestand-Netherlands",
+        "wearestand-Belgium",
+        "wearestand-Italy",
+        "wearestand-UK-Man",
+        "wearestand-Romania",
+        "wearestand-Moldova",
+        "wearestand-Canada",
+        "wearestand-Norway",
+        "wearestand-Miami",
+        "wearestand-LosAngeles",
+        "wearestand-UAE",
+        "wearestand-Singapore",
+        "wearestand-Phoenix",
+        "wearestand-Austria",
+        "wearestand-HongKong",
+        "wearestand-Turkey"
+           
+ 
 
-{
-            "tag": "🇨🇦 T.ME/wearestand",
-            "type": "urltest",
-            "outbounds": [
-               "🇨🇦CANADA"
-
-
-            ]
-        },
-{
-            "tag": "🇨🇾 T.ME/iranramona",
-            "type": "urltest",
-            "outbounds": [
-               "🇨🇾CYPRUS"
-
-
-            ]
-        },
-
-{
-            "tag": "🇬🇪 T.ME/wearestand",
-            "type": "urltest",
-            "outbounds": [
-                "🇬🇪GEORGIA"
-
-
-
-            ]
-        },
-{
-            "tag": "🇧🇴 T.ME/iranramona",
-            "type": "urltest",
-            "outbounds": [
-                "🇧🇴BOLIVIA"
-
-
-            ]
-        },
-
-
-{
-            "tag": "🇩🇪 T.ME/wearestand",
-            "type": "urltest",
-            "outbounds": [
-                "🇩🇪GERMANY",
-                "🇩🇪GERMANY2"
-
-
-            ]
-        },
-
-
-{
-            "tag": "🇮🇹 T.ME/wearestand",
-            "type": "urltest",
-            "outbounds": [
-                "🇮🇹ITALY"
-
-
-            ]
-        },
-{
-            "tag": "🇩🇰 T.ME/iranramona",
-            "type": "urltest",
-            "outbounds": [
-                "🇩🇰DENMARK"
-
-
-            ]
-        },
-
-{
-            "tag": "🇱🇧 T.ME/iranramona",
-            "type": "urltest",
-            "outbounds": [
-                "🇱🇧LEBANON"
-
-
-            ]
-        },
-{
-            "tag": "🇺🇸 T.ME/wearestand",
-            "type": "urltest",
-            "outbounds": [
-                "🇺🇸UNITED STATES",
-                "🇺🇸UNITED STATES2"
-
-
-            ]
-        },
-{
-            "tag": "🇫🇷 T.ME/iranramona",
-            "type": "urltest",
-            "outbounds": [
-                "🇫🇷FRANCE"
-
-
-            ]
-        },
-{
-            "tag": "🇪🇪 T.ME/wearestand",
-            "type": "urltest",
-            "outbounds": [
-                "🇪🇪ESTONIA"
                 
-
-
-            ]
-        },
-
-
-   {
-            "tag": "🇦🇿 T.ME/iranramona",
-            "type": "urltest",
-            "outbounds": [
-                "🇦🇿AZERBAIJAN"
-
-
-            ]
-        },
-
-{
-            "tag": "🇰🇾 T.ME/wearestand",
-            "type": "urltest",
-            "outbounds": [
-                "🇰🇾CAYMAN ISLAND"
+              
                 
-
-
-            ]
-        },
-{
-            "tag": "🇹🇷 T.ME/iranramona",
-            "type": "urltest",
-            "outbounds": [
-                "🇹🇷TURKEY"
-                
-
-
-            ]
-        },
-        {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-            "path": "",
-            "server": "146.70.75.115",
-            "server_port": 89,
-            "domain_strategy": "",
-            "tag": "🇨🇦CANADA",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": true,
-                "insecure": true,
-                "server_name": "stream.meet.google.com"
-            },
-            "type": "http",
-            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
-        },
-
-        {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-            "path": "",
-            "server": "[193.19.204.129]",
-            "server_port": 89,
-            "domain_strategy": "",
-            "tag": "🇨🇾CYPRUS",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": true,
-                "insecure": true,
-                "server_name": "stream.meet.google.com"
-            },
-            "type": "http",
-            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
-        },
-
-
-       
-        {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-            "path": "",
-            "server": "81.17.123.114",
-            "server_port": 89,
-            "domain_strategy": "",
-            "tag": "🇬🇪GEORGIA",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": true,
-                "insecure": true,
-                "server_name": "stream.meet.google.com"
-            },
-            "type": "http",
-            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
-        },
-        
-        {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-            "path": "",
-            "server": "[::ffff:2d86:bd03]",
-            "server_port": 89,
-            "domain_strategy": "",
-            "tag": "🇧🇴BOLIVIA",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": true,
-                "insecure": true,
-                "server_name": "stream.meet.google.com"
-            },
-               "type": "http",
-            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
-        },
-        
-        
-
-        
-        
+      ],
+      "url": "http://cp.cloudflare.com",
+      "interval": "5m",
+      "tolerance": 50
+    },
+   
+           
         
        
 
-        {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-            "path": "",
-            "server": "194.233.96.24",
-            "server_port": 90,
-            "domain_strategy": "",
-            "tag": "🇩🇪GERMANY",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": true,
-                "insecure": true,
-                "server_name": "stream.meet.google.com"
-            },
-            "type": "http",
-            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
-        },
-        {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-            "path": "",
-            "server": "91.214.64.21",
-            "server_port": 90,
-            "domain_strategy": "",
-            "tag": "🇩🇪GERMANY2",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": true,
-                "insecure": true,
-                "server_name": "stream.meet.google.com"
-            },
-            "type": "http",
-            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
-        },
-
-        
-        
-        {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-            "path": "",
-            "server": "85.190.232.156",
-            "server_port": 89,
-            "domain_strategy": "",
-            "tag": "🇮🇹ITALY",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": true,
-                "insecure": true,
-                "server_name": "stream.meet.google.com"
-            },
-            "type": "http",
-            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
-        },
-        
-        {
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-            "path": "",
-            "server": "85.190.238.27",
-            "server_port": 89,
-            "domain_strategy": "",
-            "tag": "🇩🇰DENMARK",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": true,
-                "insecure": true,
-                "server_name": "stream.meet.google.com"
-            },
-            "type": "http",
-            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
-        },
-
-
-
-
-        
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-            "path": "",
-            "server": "[::ffff:d461:4603]",
-            "server_port": 89,
-            "domain_strategy": "",
-            "tag": "🇱🇧LEBANON",
-             "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": true,
-                "insecure": true,
-                "server_name": "stream.meet.google.com"
-            },
-            "type": "http",
-            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
-        },
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-            "path": "",
-            "server": "[::ffff:426f:3de9]",
-            "server_port": 89,
-            "domain_strategy": "",
-            "tag": "🇺🇸UNITED STATES",
-             "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": true,
-                "insecure": true,
-                "server_name": "stream.meet.google.com"
-            },
-            "type": "http",
-            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
-        },
-
-
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-            "path": "",
-            "server": "178.249.212.136",
-            "server_port": 89,
-            "domain_strategy": "",
-            "tag": "🇫🇷FRANCE",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": true,
-                "insecure": true,
-                "server_name": "stream.meet.google.com"
-            },
-            "type": "http",
-            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
-        },
-    
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-            "path": "",
-            "server": "85.190.239.114",
-            "server_port": 90,
-            "domain_strategy": "",
-            "tag": "🇪🇪ESTONIA",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": true,
-                "insecure": true,
-                "server_name": "stream.meet.google.com"
-            },
-            "type": "http",
-            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
-        },
-
-{
-            "headers": {
-                "Host": [
-                    "stream.meet.google.com"
-                ]
-            },
-            "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-            "path": "",
-            "server": "185.202.220.128",
-            "server_port": 89,
-            "domain_strategy": "",
-            "tag": "🇺🇸UNITED STATES2",
-            "tls": {
-                "alpn": [
-                    "h2,http/1.1"
-                ],
-                "disable_sni": false,
-                "enabled": true,
-                "insecure": true,
-                "server_name": "stream.meet.google.com"
-            },
-            "type": "http",
-            "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
-        },
-
-{
-      "headers": {
-        "Host": [
-          "arvancloud.ir"
-        ]
-      },
-      "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-      "path": "",
-      "server": "45.137.79.3",
-      "server_port": 90,
-      "domain_strategy": "",
-      "tag": "🇦🇿AZERBAIJAN",
+    {
+      "tag": "wearestand-Sweden",
+      "type": "vless",
+      "server": "damp-cherry-4620.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
       "tls": {
-        "alpn": [
-          "h2,http/1.1"
-        ],
-        "disable_sni": false,
         "enabled": true,
+        "server_name": "damp-cherry-4620.vpnetwork3567.workers.dev",
         "insecure": true,
-        "server_name": "stream.meet.google.com"
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
       },
-      "type": "http",
-      "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "damp-cherry-4620.vpnetwork3567.workers.dev"
+        }
+      }
     },
-
-{
-      "headers": {
-        "Host": [
-          "arvancloud.ir"
-        ]
-      },
-      "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-      "path": "",
-      "server": "95.214.112.3",
-      "server_port": 89,
-      "domain_strategy": "",
-      "tag": "🇰🇾CAYMAN ISLAND",
+    {
+      "tag": "wearestand-Germany",
+      "type": "vless",
+      "server": "wild-resonance-23be.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
       "tls": {
-        "alpn": [
-          "h2,http/1.1"
-        ],
-        "disable_sni": false,
         "enabled": true,
+        "server_name": "wild-resonance-23be.vpnetwork3567.workers.dev",
         "insecure": true,
-        "server_name": "stream.meet.google.com"
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
       },
-      "type": "http",
-      "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "wild-resonance-23be.vpnetwork3567.workers.dev"
+        }
+      }
     },
-{
-      "headers": {
-        "Host": [
-          "arvancloud.ir"
-        ]
-      },
-      "password": "sT6b8zH8MuRtCm11ypt5rWPH",
-      "path": "",
-      "server": "45.136.155.130",
-      "server_port": 89,
-      "domain_strategy": "",
-      "tag": "🇹🇷TURKEY",
+    {
+      "tag": "wearestand-Swiss",
+      "type": "vless",
+      "server": "square-shape-a8b4.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
       "tls": {
-        "alpn": [
-          "h2,http/1.1"
-        ],
-        "disable_sni": false,
         "enabled": true,
+        "server_name": "square-shape-a8b4.vpnetwork3567.workers.dev",
         "insecure": true,
-        "server_name": "stream.meet.google.com"
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
       },
-      "type": "http",
-      "username": "QoNSt1B6WmP5k1m1vwa3tqjM"
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "square-shape-a8b4.vpnetwork3567.workers.dev"
+        }
+      }
     },
-        {
+    {
+      "tag": "wearestand-Slovakia",
+      "type": "vless",
+      "server": "soft-water-83f3.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "soft-water-83f3.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "soft-water-83f3.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-Netherlands",
+      "type": "vless",
+      "server": "shiny-unit-654d.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "shiny-unit-654d.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "shiny-unit-654d.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-Netherlands",
+      "type": "vless",
+      "server": "shiny-unit-654d.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "shiny-unit-654d.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "shiny-unit-654d.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-Belgium",
+      "type": "trojan",
+      "server": "muddy-frost-4e2d.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "password": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "tls": {
+        "enabled": true,
+        "server_name": "muddy-frost-4e2d.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "muddy-frost-4e2d.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-Italy",
+      "type": "vless",
+      "server": "lingering-boat-0b47.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "lingering-boat-0b47.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "lingering-boat-0b47.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-UK-Man",
+      "type": "vless",
+      "server": "snowy-cloud-192b.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "snowy-cloud-192b.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "snowy-cloud-192b.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-Romania",
+      "type": "vless",
+      "server": "snowy-mountain-d4be.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "snowy-mountain-d4be.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "snowy-mountain-d4be.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-Moldova",
+      "type": "trojan",
+      "server": "dry-snowflake-b29f.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "password": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "tls": {
+        "enabled": true,
+        "server_name": "dry-snowflake-b29f.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "dry-snowflake-b29f.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-Canada",
+      "type": "vless",
+      "server": "misty-star-5588.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "misty-star-5588.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "misty-star-5588.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-Norway",
+      "type": "vless",
+      "server": "damp-morning-6562.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "damp-morning-6562.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "damp-morning-6562.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-Miami",
+      "type": "vless",
+      "server": "broken-scene-ce1a.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "broken-scene-ce1a.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "broken-scene-ce1a.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-LosAngeles",
+      "type": "vless",
+      "server": "solitary-forest-ad02.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "solitary-forest-ad02.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "solitary-forest-ad02.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-UAE",
+      "type": "vless",
+      "server": "little-fog-1c2f.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "little-fog-1c2f.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "little-fog-1c2f.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-Singapore",
+      "type": "trojan",
+      "server": "lingering-fire-1fe9.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "password": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "tls": {
+        "enabled": true,
+        "server_name": "lingering-fire-1fe9.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "lingering-fire-1fe9.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-Phoenix",
+      "type": "vless",
+      "server": "falling-mud-d0e2.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "falling-mud-d0e2.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "falling-mud-d0e2.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-Austria",
+      "type": "vless",
+      "server": "ancient-haze-d203.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "ancient-haze-d203.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "ancient-haze-d203.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-HongKong",
+      "type": "vless",
+      "server": "quiet-wind-f608.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "quiet-wind-f608.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "quiet-wind-f608.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
+      "tag": "wearestand-Turkey",
+      "type": "vless",
+      "server": "still-bar-5702.vpnetwork3567.workers.dev",
+      "server_port": 443,
+      "uuid": "563B4029-2161-7E31-FA35-1B21441AE537",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "still-bar-5702.vpnetwork3567.workers.dev",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "still-bar-5702.vpnetwork3567.workers.dev"
+        }
+      }
+    },
+    {
       "type": "direct",
       "tag": "direct"
     }
@@ -737,7 +743,7 @@
       },
       {
         "clash_mode": "Global",
-        "outbound": "رضا شاه روحت شاد"
+        "outbound": "زن زندگی آزادی"
       },
       {
         "clash_mode": "Direct",
@@ -763,7 +769,7 @@
       
       {
         "ip_cidr": "10.10.34.0/24",
-        "outbound": "رضا شاه روحت شاد"
+        "outbound": "زن زندگی آزادی"
       },
       {
         "ip_is_private": true,
@@ -773,7 +779,7 @@
     "rule_set": [
       
     ],
-    "final": "رضا شاه روحت شاد",
+    "final": "زن زندگی آزادی",
     "auto_detect_interface": true
   },
   "experimental": {
