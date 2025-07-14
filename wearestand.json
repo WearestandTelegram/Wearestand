@@ -142,7 +142,7 @@
         "wearestand-Swiss",
         "wearestand-Slovakia",
         "wearestand-Netherlands",
-        "wearestand-Netherlands",
+        "wearestand-iranramona",
         "wearestand-Belgium",
         "wearestand-Italy",
         "wearestand-UK-Man",
@@ -175,7 +175,7 @@
         "wearestand-Swiss",
         "wearestand-Slovakia",
         "wearestand-Netherlands",
-        "wearestand-Netherlands",
+        "wearestand-iranramona",
         "wearestand-Belgium",
         "wearestand-Italy",
         "wearestand-UK-Man",
@@ -333,7 +333,7 @@
       }
     },
     {
-      "tag": "wearestand-Netherlands",
+      "tag": "wearestand-iranramona",
       "type": "vless",
       "server": "shiny-unit-654d.vpnetwork3567.workers.dev",
       "server_port": 443,
