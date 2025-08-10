@@ -157,7 +157,32 @@
         "wearestand-Phoenix",
         "wearestand-Austria",
         "wearestand-HongKong",
-        "wearestand-Turkey"
+        "wearestand-Turkey",
+        "wearestand-Sweden 2",
+        "wearestand-Germany 2",
+        "wearestand-Swiss 2",
+        "wearestand-Slovakia 2",
+        "wearestand-Netherlands 2",
+        "wearestand-Russia 2",
+        "wearestand-Bulgaria 2",
+        "wearestand-Italy 2",
+        "wearestand-UK-Man 2",
+        "wearestand-Romania 2",
+        "wearestand-Moldova 2",
+        "wearestand-Canada 2",
+        "wearestand-Norway 2",
+        "wearestand-Miami 2",
+        "wearestand-LosAngeles 2",
+        "wearestand-UAE 2",
+        "wearestand-Singapore 2",
+        "wearestand-Phoenix 2",
+        "wearestand-Austria 2",
+        "wearestand-HongKong 2",
+        "wearestand-Kenya 2",
+        "wearestand-Moldova 2",
+        "wearestand-Ukraine 2",
+        "wearestand-Belgium 2",
+        "wearestand-Turkey 2"
             
          
 
@@ -190,7 +215,32 @@
         "wearestand-Phoenix",
         "wearestand-Austria",
         "wearestand-HongKong",
-        "wearestand-Turkey"
+        "wearestand-Turkey",
+        "wearestand-Sweden 2",
+        "wearestand-Germany 2",
+        "wearestand-Swiss 2",
+        "wearestand-Slovakia 2",
+        "wearestand-Netherlands 2",
+        "wearestand-Russia 2",
+        "wearestand-Bulgaria 2",
+        "wearestand-Italy 2",
+        "wearestand-UK-Man 2",
+        "wearestand-Romania 2",
+        "wearestand-Moldova 2",
+        "wearestand-Canada 2",
+        "wearestand-Norway 2",
+        "wearestand-Miami 2",
+        "wearestand-LosAngeles 2",
+        "wearestand-UAE 2",
+        "wearestand-Singapore 2",
+        "wearestand-Phoenix 2",
+        "wearestand-Austria 2",
+        "wearestand-HongKong 2",
+        "wearestand-Kenya 2",
+        "wearestand-Moldova 2",
+        "wearestand-Ukraine 2",
+        "wearestand-Belgium 2",
+        "wearestand-Turkey 2"
            
  
 
@@ -726,6 +776,578 @@
         }
       }
     },
+  {
+   "type": "vless",
+   "tag": "wearestand-Bulgaria 2",
+   "server": "bul.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "bul.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "bul.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Canada 2",
+   "server": "ca.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "ca.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "ca.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Germany 2",
+   "server": "ger.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "ger.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "ger.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Netherlands 2",
+   "server": "nl.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "nl.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "nl.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Norway 2",
+   "server": "no.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "no.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "no.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Romania 2",
+   "server": "ro.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "ro.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "ro.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-LosAngeles 2",
+   "server": "usla.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "usla.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "usla.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-UAE 2",
+   "server": "uae.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "uae.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "uae.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Russia 2",
+   "server": "ru.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "ru.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "ru.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Miami 2",
+   "server": "usfl.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "usfl.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "usfl.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-HongKong 2",
+   "server": "hk.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "hk.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "hk.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Phoenix 2",
+   "server": "usphx.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "usphx.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "usphx.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Sweden 2",
+   "server": "swe.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "swe.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "swe.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Slovakia 2",
+   "server": "sk.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "sk.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "sk.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-UK-Man 2",
+   "server": "ukman.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "ukman.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "ukman.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Italy 2",
+   "server": "it.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "it.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "it.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Kenya 2",
+   "server": "ken.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "ken.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "ken.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Swiss 2",
+   "server": "swiss.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "swiss.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "swiss.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Austria 2",
+   "server": "aus.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "aus.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "aus.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "vless",
+   "tag": "wearestand-Turkey 2",
+   "server": "tk.foldandflyhigh.com",
+   "server_port": 443,
+   "uuid": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "tk.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "tk.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   },
+   "packet_encoding": "xudp"
+  },
+  {
+   "type": "trojan",
+   "tag": "wearestand-Ukraine 2",
+   "server": "ukr.foldandflyhigh.com",
+   "server_port": 443,
+   "password": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "ukr.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "ukr.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   }
+  },
+  {
+   "type": "trojan",
+   "tag": "wearestand-Moldova 2",
+   "server": "md.foldandflyhigh.com",
+   "server_port": 443,
+   "password": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "md.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "md.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   }
+  },
+  {
+   "type": "trojan",
+   "tag": "wearestand-Singapore 2",
+   "server": "sg.foldandflyhigh.com",
+   "server_port": 443,
+   "password": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "sg.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "sg.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   }
+  },
+  {
+   "type": "trojan",
+   "tag": "wearestand-Belgium 2",
+   "server": "bg.foldandflyhigh.com",
+   "server_port": 443,
+   "password": "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA",
+   "tls": {
+    "enabled": true,
+    "server_name": "bg.foldandflyhigh.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/",
+    "headers": {
+     "Host": "bg.foldandflyhigh.com"
+    },
+    "early_data_header_name": "Sec-WebSocket-Protocol"
+   }
+  },
     {
       "type": "direct",
       "tag": "direct"
